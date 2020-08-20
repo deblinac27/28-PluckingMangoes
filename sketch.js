@@ -88,7 +88,14 @@ mangoBodyPosition = lmango.body.setPosition
 stoneBodyPosition=lstone.body.setPosition
 
 var distance = dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
-  if(distance<-lmango.r+lstone.r){
+  if(distance<=lmango.r+lstone.r){
     Matter.Body.setStatic(lmango.body,false);
+  }
+}
+
+function keyPressed(){
+  if(keyCode === 32){
+    Matter.Body.setPosition(stone.body,{x:235, y:420})
+    slingshot.attach(stone.body);
   }
 }
