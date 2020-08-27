@@ -10,6 +10,7 @@ var ground;
 var stone;
 var girlImg, girl;
 var mango1;
+var slingshot;
 function preload(){
   girlImg= loadImage("sprites/girl.png");
 
@@ -46,7 +47,9 @@ function draw() {
   rectMode(CENTER);
   background(181, 224, 255);
   Engine.update(engine);
- 
+  
+  image(girlImg,200,340,200,300);
+  
   slingshot.display();    
   ground.display();
   tree.display();
